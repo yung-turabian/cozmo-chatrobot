@@ -1,0 +1,2 @@
+- Cozmo architecture only works with Python 3.7.5
+- Bard API needs to be converted
