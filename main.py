@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#https://data.bit-bots.de/cozmo_sdk_doc/cozmosdk.anki.com/docs/index.html
+
 '''
 Working on our conversation bot here
 
@@ -21,9 +23,11 @@ Working on our conversation bot here
 '''
 
 import cozmo
+import cozmoclad
 
 def cozmo_program(robot: cozmo.robot.Robot):
     robot.say_text("Hello.").wait_for_completed()
+    robot.play_audio("speech.wav")
 
 
 cozmo.run_program(cozmo_program)
