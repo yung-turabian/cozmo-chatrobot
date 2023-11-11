@@ -33,6 +33,7 @@ def light_when_face(robot: cozmo.robot.Robot):
     robot.move_lift(-3)
     robot.set_head_angle(cozmo.robot.MAX_HEAD_ANGLE).wait_for_completed()
 
+
     face = None
 
     print("Press CTRL-C to quit")

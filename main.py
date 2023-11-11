@@ -1,33 +1,23 @@
-#!/usr/bin/env python3
 
-# Copyright (c) 2016 Anki, Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License in the file LICENSE.txt or at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+try:
+    import cozmo
+    import sys
+    import os
 
-#https://data.bit-bots.de/cozmo_sdk_doc/cozmosdk.anki.com/docs/index.html
+except ImportError:
+    sys.exit(sys.exit("Some packages are required. Do `pip3 install cozmo` to install."))
+    
 
-'''
-Working on our conversation bot here
+# https://github.com/c64-dev/Cozmo.AI/blob/master/main.py
+# https://github.com/rizal72/Cozmo-Voice-Commands
+# https://data.bit-bots.de/cozmo_sdk_doc/cozmosdk.anki.com/docs/generated/cozmo.faces.html
+# https://www.cybrosys.com/blog/how-to-create-a-voice-chatbot-using-openai-s-api
 
+# GENERAL PARAMS
+version = "ver. 0.0.1"
+title = "Cozmo.Lab.Assistant      " + version
+author = "By Henry Wandover (hw9692@bard.edu)"
+descr = ""
 
-'''
-
-import cozmo
-import cozmoclad
-
-def cozmo_program(robot: cozmo.robot.Robot):
-    robot.say_text("Hello.").wait_for_completed()
-    robot.play_audio("speech.wav")
-
-
-cozmo.run_program(cozmo_program)
+# INITIALIZE SYSTEM
+def initCozmo():
