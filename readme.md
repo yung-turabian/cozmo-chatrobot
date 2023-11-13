@@ -38,4 +38,4 @@ to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT License](https://choosealicense.com/licenses/mit/) - Copyright (c) 2021 The terraform-docs Authors.
+[MIT License](https://choosealicense.com/licenses/mit/)
