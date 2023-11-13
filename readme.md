@@ -1,5 +1,5 @@
 # Cozmo Code for HRI Lab
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/ewhenry/cozmo-lab-assistant/edit/master/LICENSE)
 
 This is a Python library for...
 
