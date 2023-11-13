@@ -1,5 +1,5 @@
 # Cozmo Code for HRI Lab
-[![License](https://img.shields.io/github/license/terraform-docs/terraform-docs)](https://github.com/ewhenry/cozmo-lab-assistant/master/LICENSE) [![Latest release](https://img.shields.io/github/v/release/terraform-docs/terraform-docs)](https://github.com/cozmo-lab-assistant/releases)
+[![License](https://img.shields.io/github/license/terraform-docs/terraform-docs)](https://github.com/ewhenry/cozmo-lab-assistant/blob/master/LICENSE) [![Latest release](https://img.shields.io/github/v/release/terraform-docs/terraform-docs)](https://github.com/cozmo-lab-assistant/blob/releases)
 
 
 This is a Python library for...
