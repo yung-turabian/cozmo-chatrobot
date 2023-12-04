@@ -3,11 +3,11 @@
 
 This is a Python library for...
 
-# Notes
+## Notes
 
 - Cozmo architecture only works with Python 3.7.5
 
-# Instalization
+## Instalization
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
