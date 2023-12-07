@@ -24,7 +24,6 @@ import asyncio
 import time
 
 import cozmo
-import cozmo.faces
 
 
 def follow_faces(robot: cozmo.robot.Robot):
@@ -42,7 +41,7 @@ def follow_faces(robot: cozmo.robot.Robot):
         if face_to_follow:
             # start turning towards the face
             turn_action = robot.turn_towards_face(face_to_follow)
-            
+
         if not (face_to_follow and face_to_follow.is_visible):
             # find a visible face, timeout if nothing found after a short while
             try:
