@@ -1,34 +1,19 @@
 # Cozmo Code for HRI Lab
 [![License](https://img.shields.io/github/license/terraform-docs/terraform-docs)](https://github.com/ewhenry/cozmo-lab-assistant/blob/master/LICENSE)
 
-This is a Python library for...
+This is a Python library for transcribing real-time communication from the user and using GPT3.5-Turbo to generate responses from the assistant.
 
 ## Notes
 
-- Cozmo architecture only works with Python 3.7.5
+- Working with Python  3.9.0
 
 ## Instalization
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
+You can fork this repo to build off of it, or download it if you must.
 
 ## Usage
 
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+No proper .exe or application front end, merely execute the app.py file (Python 3.9) and start interacting.
 
 ## Contributing
 
