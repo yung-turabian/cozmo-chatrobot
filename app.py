@@ -20,8 +20,8 @@ author= "Henry (hw9692@bard.edu)"
 descr= ""
 
 # region Constants
-CLIENT= OpenAI(api_key= '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')
-ELEVEN_API_KEY= "e1452e50b96faa92ffdf9f479e2509b0"
+CLIENT= OpenAI(api_key= '')
+ELEVEN_API_KEY= ""
 TEMPERATURE = 0.5
 MAX_TOKENS = 500
 FREQUENCY_PENALTY = 0
