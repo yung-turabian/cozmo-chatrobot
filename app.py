@@ -3,15 +3,12 @@ from ctypes import *
 from openai import OpenAI
 import pyaudio
 import speech_recognition as sr
-from termcolor import cprint
-import tempfile
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 import cozmo
-import soundfile as sf
 import torch
+import soundfile
 import whisper
-from elevenlabs import generate, play, stream, save
 
 # General Parameters
 version= "ver. 0.0.1"
@@ -20,8 +17,8 @@ author= "Henry (hw9692@bard.edu)"
 descr= ""
 
 # region Constants
-CLIENT= OpenAI(api_key= '')
-ELEVEN_API_KEY= ""
+CLIENT= OpenAI(api_key= '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')
+ELEVEN_API_KEY= "e1452e50b96faa92ffdf9f479e2509b0"
 TEMPERATURE = 0.5
 MAX_TOKENS = 500
 FREQUENCY_PENALTY = 0
@@ -36,7 +33,7 @@ CHANNELS = 1
 
 INSTRUCTIONS = """Your name is Cozmo. You will be the artifical intelligence, or AI, within Cozmo, a consumer robot made by Anki.
             You for the most part will primarily be used for a lab experiment monitoring the trust of humans between a robot and a human.
-            You will be asked complex questions and will provide answers to them, as well as follow ups."""
+            You will be asked complex questions and will provide answers to them, as well as follow ups. Please keep answers brief, like 3-4 paragraphs max as a response."""
 
 #endregion
 
@@ -86,6 +83,10 @@ def main():
     
     sys.exit(0)
 
+def split_string(input_string, chunk_size):
+    return [input_string[i:i+chunk_size] for i in range(0, len(input_string), chunk_size)]
+
+
 def talktome(robot: cozmo.robot.Robot):
     robot.play_anim_trigger(cozmo.anim.Triggers.ConnectWakeUp).wait_for_completed()  
     chat_log = []
@@ -103,31 +104,33 @@ def talktome(robot: cozmo.robot.Robot):
     
     while 1:
         with speech as source:
-            print("say something!…")
+            print("Adjusting for background noise. One second")
             audio = r.adjust_for_ambient_noise(source)
             try:
+                robot.say_text("uh huh..", use_cozmo_voice=True, duration_scalar=0.7).wait_for_completed()
+                print("say something!…")
                 audio = r.listen(source, timeout=3)  # Set a shorter timeout
             except sr.WaitTimeoutError:
                 print("Timeout. Listening again...")
                 continue
         try:
             robot.play_anim_trigger(cozmo.anim.Triggers.VC_Listening).wait_for_completed()
-            recog = r.recognize_whisper(audio, model="small", language="english")
+            recog = r.recognize_whisper(audio, model="tiny.en", language="english")
 
             print(recog)
             response = get_response(INSTRUCTIONS, chat_log, recog)
             chat_log.append((recog, response))
 
             print("The response from GPT was ", response)
-            audio = generate(
-                    text=response,
-                    api_key=ELEVEN_API_KEY,
-                    voice="Clyde",
-                    model="eleven_turbo_v2",
-                    stream=True
-            )
 
-            stream(audio)
+            chunk_size = 250
+
+            if (len(response) > chunk_size):
+                response = split_string(response, chunk_size)
+                for sect in response:
+                    robot.say_text(sect, use_cozmo_voice=True, duration_scalar=0.8).wait_for_completed()
+            else:
+                robot.say_text(response, use_cozmo_voice=True, duration_scalar=0.8).wait_for_completed()
             robot.play_anim_trigger(cozmo.anim.Triggers.Hiccup).wait_for_completed()
            
         except sr.UnknownValueError:
