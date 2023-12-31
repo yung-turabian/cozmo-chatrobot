@@ -17,7 +17,7 @@ No proper .exe or application front end, merely execute the app.py file (Python 
 
 ## TODO
 
-[ ] support compatability with NAO, a more serious unit
+- [ ] support compatability with NAO, a more serious unit
 - [ ] build an app front-end
 - [ ] find a way to speed up the response time, perhaps drop GPT3.5 or use a websocket to a fast computer
 
