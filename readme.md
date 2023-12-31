@@ -15,6 +15,12 @@ You can fork this repo to build off of it, or download it if you must.
 
 No proper .exe or application front end, merely execute the app.py file (Python 3.9) and start interacting.
 
+## TODO
+
+[] support compatability with NAO, a more serious unit
+[] build an app front-end
+[] find a way to speed up the response time, perhaps drop GPT3.5 or use a websocket to a fast computer
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
