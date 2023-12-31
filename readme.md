@@ -1,4 +1,4 @@
-# Cozmo Code for HRI Lab
+# Cozmo Code for Human-Robot Interaction Lab
 [![License](https://img.shields.io/github/license/terraform-docs/terraform-docs)](https://github.com/ewhenry/cozmo-lab-assistant/blob/master/LICENSE)
 
 This is a Python library for transcribing real-time communication from the user and using GPT3.5-Turbo to generate responses from the assistant.
