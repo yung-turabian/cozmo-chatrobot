@@ -5,7 +5,7 @@ This is a Python library for transcribing real-time communication from the user 
 
 ## Notes
 
-- Working with Python  3.9.0
+- Cozmo's API only works with Python 3.9
 
 ## Instalization
 
@@ -17,9 +17,9 @@ No proper .exe or application front end, merely execute the app.py file (Python 
 
 ## TODO
 
-[] support compatability with NAO, a more serious unit
-[] build an app front-end
-[] find a way to speed up the response time, perhaps drop GPT3.5 or use a websocket to a fast computer
+- [] support compatability with NAO, a more serious unit
+- [] build an app front-end
+- [] find a way to speed up the response time, perhaps drop GPT3.5 or use a websocket to a fast computer
 
 ## Contributing
 
